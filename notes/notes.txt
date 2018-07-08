@@ -1,0 +1,24 @@
+
+  // notes...
+
+
+import tasks from "src/mocks/TasksData.json";
+  
+  componentDidMount() {
+    let tempTasks = [],
+      tempDone = [];
+    tasks.data.map(task => {
+      task.done ? tempDone.push(task) : tempTasks.push(task);
+    });
+    this.setState(
+      () => ({
+        tasks: tempTasks,
+        done: tempDone
+      }),
+      () => {
+        localforage.setItem("tasks", this.state.tasks, () => {
+          localforage.setItem("done", this.state.done);
+        });
+      }
+    );
+  }
