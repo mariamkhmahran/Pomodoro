@@ -11,6 +11,7 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
+  overflow: scroll;
 }
 
 .btn {
@@ -54,6 +55,15 @@ body {
   padding: 10px;
 }
 
+.Main {
+  color: white;
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
 .meta {
   display: flex;
 }
@@ -74,26 +84,23 @@ body {
   width: 30px;
   height: 30px;
 }
-button.icon {
+.icon {
   margin: 10px;
 }
 
 /* Focus component styles */
-.Main,
-.tasks {
-  color: white;
-  display: flex;
-  flex-flow: row wrap;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
-
 .tasks > div:first-child {
   display: flex;
-  flex-flow: row wrap;
+  flex-wrap: wrap;
   width: 100%;
-  padding: 0px 96px 0px 96px;
+  padding: 0px 96px;
+}
+.charts > div:first-child {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px 96px;
+  width: 90%;
+  height: 90%;
 }
 
 .left_col {
@@ -163,7 +170,7 @@ button.icon {
   outline-style: none;
 }
 
-.Main .no-btn-styles {
+.Focus .no-btn-styles {
   height: 210px;
   width: 225px;
 }
@@ -203,6 +210,12 @@ button.icon {
   display: flex;
   flex-direction: row;
   margin: 7px;
+}
+
+.cardContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .q_card {
@@ -342,12 +355,20 @@ button.icon {
 /* tasks page styles */
 
 .transparent_box {
-  margin: 2%;
   background: rgb(255, 255, 255, 0.3);
   display: flex;
   flex-flow: column;
-  padding: 2%;
   border-radius: 10px;
+}
+
+.charts .transparent_box {
+  margin: 13px;
+  padding: 0px;
+}
+
+.tasks .transparent_box {
+  margin: 2%;
+  padding: 2%;
   width: 93%;
   height: 600px;
 }
@@ -477,4 +498,25 @@ button.icon {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-end;
+}
+
+/* charts styles */
+
+.third {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+}
+
+/* checkbox styles */
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  border-radius: 2px;
+  height: 20px;
+  width: 20px;
+  border: black solid 3px;
+  background: transparent;
 }
