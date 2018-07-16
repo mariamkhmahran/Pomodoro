@@ -12,11 +12,11 @@ const Header = () => (
     </div>
     <div>
       <Link to="/tasks">
-        <img id="header_icon" src={tasks_icon} alt="tasks" />
+        <img className="icon" id="header_icon" src={tasks_icon} alt="tasks" />
       </Link>
-      <button className="no-btn-styles icon">
-        <img id="header_icon" src={charts_icon} alt="charts" />
-      </button>
+      <Link to="/charts">
+        <img className="icon" id="header_icon" src={charts_icon} alt="charts" />
+      </Link>
     </div>
   </div>
 );
