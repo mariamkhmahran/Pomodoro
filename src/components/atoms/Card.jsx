@@ -26,13 +26,12 @@ export class QueueCard extends React.Component {
 
 const SubCard = props => (
   <div className="card subCard content">
-    <button
-      className="check small"
-      // onClick={() => props.markAsDone(props.task)}
-    />
+    <button className="check small" />
     <p>{props.task.name}</p>
     <span id="cyclesDone">
-      {`${props.task.cyclesDone} ${props.task.cyclesDone === 1 ? "Cycle" : "Cycles"}`}{" "}
+      {`${props.task.cyclesDone} ${
+        props.task.cyclesDone === 1 ? "Cycle" : "Cycles"
+      }`}{" "}
     </span>
   </div>
 );
@@ -51,7 +50,7 @@ export class TaskCard extends React.Component {
 
   render() {
     let { task, onclick } = this.props;
-    let { id, name, deadline, cyclesDone, estimatedTime, done, subTasks } = task;
+    let { name, deadline, cyclesDone, estimatedTime, done, subTasks } = task;
 
     return (
       <div className="maxWidth centerAlign column">
@@ -61,7 +60,10 @@ export class TaskCard extends React.Component {
               {done ? (
                 <img className="small" src={checked} alt="checkbox" />
               ) : (
-                <button className="check small " onClick={() => onclick(task)} />
+                <button
+                  className="check small "
+                  onClick={() => onclick(task)}
+                />
               )}
               <div className="task_data">
                 <b id="name">{name}</b>
@@ -71,7 +73,9 @@ export class TaskCard extends React.Component {
               </div>
               <div className="actions">
                 {subTasks && subTasks.length > 0 ? (
-                  <button className="no-btn-styles expandBtn" onClick={this.expandPanel}>
+                  <button
+                    className="no-btn-styles expandBtn"
+                    onClick={this.expandPanel}>
                     <img src={arrow} alt="expand" id="arrow" />
                   </button>
                 ) : (
