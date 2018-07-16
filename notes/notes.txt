@@ -3,7 +3,7 @@
 
 
 import tasks from "src/mocks/TasksData.json";
-  
+
   componentDidMount() {
     let tempTasks = [],
       tempDone = [];
@@ -16,9 +16,9 @@ import tasks from "src/mocks/TasksData.json";
         done: tempDone
       }),
       () => {
-        localforage.setItem("tasks", this.state.tasks, () => {
-          localforage.setItem("done", this.state.done);
-        });
+        GeneralState.set("tasks", this.state.tasks);
+        GeneralState.set("done", this.state.done);
+        GeneralState.set("queue", this.state.tasks);
       }
     );
   }

@@ -56,7 +56,12 @@ export class TaskCard extends React.Component {
           <div className="content task_content">
             <div>
               {done ? (
-                <img className="small" src={checked} alt="checkbox" />
+                <img
+                  id="doneImg"
+                  className="small"
+                  src={checked}
+                  alt="checkbox"
+                />
               ) : (
                 <button
                   className="check small "
@@ -84,7 +89,7 @@ export class TaskCard extends React.Component {
           </div>
         </div>
         <div className="expansionPanel maxWidth" id="panel">
-          {subTasks
+          {subTasks.length > 0
             ? subTasks.map(task => (
                 <SubCard key={task.id} task={task} onclick={onclick} />
               ))
