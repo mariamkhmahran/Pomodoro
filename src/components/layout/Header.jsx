@@ -7,7 +7,9 @@ import { Link } from "react-router-dom";
 const Header = () => (
   <div className="Header">
     <div className="meta">
-      <img id="timer_icon" src={timer_icon} alt="pomodoro" />
+      <Link to="/">
+        <img id="timer_icon" src={timer_icon} alt="pomodoro" />
+      </Link>
       <h1 className="Title">POMODORO</h1>
     </div>
     <div>
