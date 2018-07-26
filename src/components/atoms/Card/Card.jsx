@@ -2,6 +2,7 @@ import React from "react";
 import slider from "src/pics/slider.png";
 import checked from "src/pics/checked.svg";
 import arrow from "src/pics/Polygon.svg";
+import "./Card.css";
 
 export const QueueCard = props => {
   let { task, markAsDone } = props;
@@ -24,12 +25,11 @@ export const QueueCard = props => {
 
 const SubCard = props => (
   <div className="card subCard content">
-    <button className="check small" />
     <p>{props.task.name}</p>
     <span id="cyclesDone">
       {`${props.task.cyclesDone} ${
         props.task.cyclesDone === 1 ? "Cycle" : "Cycles"
-      }`}{" "}
+      }`}
     </span>
   </div>
 );
@@ -47,7 +47,7 @@ export class TaskCard extends React.Component {
   };
 
   render() {
-    let { task, onclick } = this.props;
+    let { task, onclick, onDelete } = this.props;
     let { name, deadline, cyclesDone, estimatedTime, done, subTasks } = task;
 
     return (
@@ -75,6 +75,9 @@ export class TaskCard extends React.Component {
                 <span>- Deadline: {deadline}</span>
               </div>
               <div className="actions">
+                <span className="card__close" onClick={() => onDelete(task)}>
+                  &times;
+                </span>
                 {subTasks && subTasks.length > 0 ? (
                   <button
                     className="no-btn-styles expandBtn"
@@ -90,9 +93,7 @@ export class TaskCard extends React.Component {
         </div>
         <div className="expansionPanel maxWidth" id="panel">
           {subTasks.length > 0
-            ? subTasks.map(task => (
-                <SubCard key={task.id} task={task} onclick={onclick} />
-              ))
+            ? subTasks.map(task => <SubCard key={task.id} task={task} />)
             : ""}
         </div>
       </div>
