@@ -1,4 +1,5 @@
 import React from "react";
+import * as GeneralState from "src/logic/GeneralState";
 
 const POMODORO_TIME = 25 * 60 * 1000;
 export const Context = React.createContext();
@@ -9,7 +10,7 @@ class TimerContext extends React.Component {
   tick = () => {
     const { isTimerRunning, remainigTime } = this.state;
     if (isTimerRunning) {
-      let currentTime = Date.now();
+      let currentTime = new Date();
       if (remainigTime >= 0) {
         this.setState({
           remainigTime: this.time - (currentTime - this.startTime)
@@ -27,6 +28,7 @@ class TimerContext extends React.Component {
       isTimerRunning: false
     }));
     this.props.addCycle();
+    GeneralState.logCycle();
   };
 
   startTimer = () => {
