@@ -228,6 +228,9 @@ body {
     border-top: 2px solid rgb(255, 255, 255, 0.5);
     margin-top: 5%;
   }
+  .subtitle {
+    font-size: 50px;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -241,8 +244,5 @@ body {
   .circular_btn#play {
     width: 120px;
     padding-left: 8px;
-  }
-  .subtitle {
-    font-size: 50px;
   }
 }
