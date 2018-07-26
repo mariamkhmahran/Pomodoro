@@ -1,6 +1,7 @@
 import * as GeneralState from "./GeneralState";
 import TasksData from "src/mocks/TasksData.json";
 import { storage } from "localforage";
+import ChartData from "src/mocks/ChartData.json";
 
 test("GeneralState.set", async () => {
   await GeneralState.set("happy", true);
@@ -12,7 +13,7 @@ test("GeneralState.get", async () => {
   let result = await GeneralState.get("happy");
   expect(result).toEqual(true);
   result = await GeneralState.get("sad");
-  expect(result).toEqual(undefined);
+  expect(result).toEqual([]);
 });
 
 test("GeneralState.getIndex", async () => {
@@ -29,12 +30,10 @@ test("GeneralState.getAll", async () => {
   await GeneralState.set("tasks", data[0]);
   await GeneralState.set("queue", data[0]);
   await GeneralState.set("done", data[1]);
-  await GeneralState.set("cycles", 5);
   let result = await GeneralState.getAll();
   expect(result.tasks).toMatchObject(data[0]);
   expect(result.queue).toMatchObject(data[0]);
   expect(result.done).toMatchObject(data[1]);
-  expect(result.cycles).toEqual(5);
   await GeneralState.getAll(fun);
   expect(fun).toHaveBeenCalled();
 });
@@ -86,4 +85,51 @@ test("GeneralState.reOrder", async () => {
   expect(queue).toEqual([1, 2, 3, 4, 5]);
   expect(none).toEqual(null);
   expect(none1).toEqual(null);
+});
+
+test("GeneralState.log", async () => {
+  storage["chartData"] = null;
+  let data = await GeneralState.log();
+  let day = new Date().getDay();
+
+  expect(data.tasks.length).toEqual(8);
+  expect(data.tasks[7]).toHaveProperty("value", 0);
+  expect(data.tasks[2]).toHaveProperty("value", 0);
+  expect(data.tasks[0]).toHaveProperty("value", 0);
+  expect(data.tasks[7]).toHaveProperty("day", day);
+});
+
+describe("chart data", () => {
+  beforeEach(async () => {
+    await GeneralState.set("chartData", []);
+    await GeneralState.set("chartData", ChartData);
+  });
+
+  test("GeneralState.logTask", async () => {
+    let data = await GeneralState.logTask();
+    let day = new Date().getDay();
+
+    expect(data.tasks.length).toEqual(8);
+    expect(data.tasks[7]).toHaveProperty("value", 1);
+    expect(data.tasks[7]).toHaveProperty("day", day);
+  });
+
+  test("GeneralState.logCycle", async () => {
+    let data = await GeneralState.logCycle();
+    let day = new Date().getDay();
+
+    expect(data.cycles.length).toEqual(8);
+    expect(data.cycles[7]).toHaveProperty("value", 1);
+    expect(data.cycles[7]).toHaveProperty("day", day);
+  });
+
+  test("GeneralState.getChartData", async () => {
+    let data = await GeneralState.getChartData();
+    let day = new Date().getDay();
+
+    expect(data.cycles.length).toEqual(8);
+    expect(data.tasks.length).toEqual(8);
+    expect(data.cycles[7]).toHaveProperty("value", 0);
+    expect(data.tasks[7]).toHaveProperty("day", day);
+  });
 });
