@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="left_col"
+>
+  <div>
+    <h1
+      id="clock"
+    >
+      25:00
+    </h1>
+    <button
+      className="no-btn-styles round"
+      onClick={[Function]}
+    >
+      <img
+        alt="start"
+        className="circular_btn"
+        id="play"
+        src="play_btn.png"
+      />
+    </button>
+  </div>
+</div>
+`;
