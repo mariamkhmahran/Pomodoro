@@ -1,0 +1,52 @@
+.tasks > div:first-child {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0px 96px;
+}
+
+.left_col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 55%;
+}
+
+.right_col {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-left: 2px solid rgb(255, 255, 255, 0.5);
+  margin-top: 2%;
+  height: 80vh;
+  width: 44%;
+}
+
+.tasks .transparent_box {
+  margin: 2%;
+  padding: 2%;
+  width: 93%;
+  height: 600px;
+}
+
+.cardList {
+  height: fit-content;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.plusBtn {
+  color: #f2a969;
+  font-size: 32px;
+  height: 50px;
+  width: 70px;
+  border-radius: 39px;
+}
+.plusBtn:hover {
+  background-color: rgb(249, 249, 249);
+  box-shadow: 1px 0px 15px #ce8f58;
+}
