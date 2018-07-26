@@ -1,0 +1,22 @@
+{
+  "cycles": [
+    { "day": 0, "value": 0 },
+    { "day": 1, "value": 0 },
+    { "day": 2, "value": 0 },
+    { "day": 3, "value": 0 },
+    { "day": 4, "value": 0 },
+    { "day": 5, "value": 0 },
+    { "day": 6, "value": 0 },
+    { "day": 0, "value": 0 }
+  ],
+  "tasks": [
+    { "day": 0, "value": 0 },
+    { "day": 1, "value": 0 },
+    { "day": 2, "value": 0 },
+    { "day": 3, "value": 0 },
+    { "day": 4, "value": 0 },
+    { "day": 5, "value": 0 },
+    { "day": 6, "value": 0 },
+    { "day": 0, "value": 0 }
+  ]
+}
