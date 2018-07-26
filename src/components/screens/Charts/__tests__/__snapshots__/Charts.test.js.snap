@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Charts.render 1`] = `
+<div
+  className="router_output"
+>
+  <div
+    className="subHeader"
+  >
+    <span
+      className="subtitle"
+    >
+      Charts
+    </span>
+  </div>
+  <div
+    className="Main charts"
+  >
+    <div>
+      <div
+        className="transparent_box"
+        style={
+          Object {
+            "height": "450px",
+            "width": "100%",
+          }
+        }
+      >
+        <BarChart />
+      </div>
+    </div>
+  </div>
+</div>
+`;

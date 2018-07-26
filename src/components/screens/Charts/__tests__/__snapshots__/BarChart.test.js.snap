@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BarChart.render 1`] = `
+<div
+  style={
+    Object {
+      "height": "100%",
+      "width": "90%",
+    }
+  }
+>
+  <Bar
+    data={
+      Object {
+        "datasets": Array [
+          Object {
+            "backgroundColor": "#F36969",
+            "borderColor": "#F36969",
+            "data": Array [],
+            "label": "Cycles",
+          },
+          Object {
+            "backgroundColor": "#8EB7EE",
+            "borderColor": "#8EB7EE",
+            "data": Array [],
+            "label": "Tasks",
+          },
+        ],
+        "labels": Array [],
+      }
+    }
+    height={500}
+    id="chart"
+    options={
+      Object {
+        "maintainAspectRatio": false,
+        "scales": Object {
+          "xAxes": Array [
+            Object {
+              "gridLines": Object {
+                "color": "white",
+                "display": false,
+              },
+              "ticks": Object {
+                "beginAtZero": true,
+                "fontColor": "white",
+              },
+            },
+          ],
+          "yAxes": Array [
+            Object {
+              "gridLines": Object {
+                "color": "white",
+                "display": false,
+              },
+              "ticks": Object {
+                "beginAtZero": true,
+                "display": false,
+              },
+            },
+          ],
+        },
+      }
+    }
+    width={700}
+  />
+</div>
+`;
