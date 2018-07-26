@@ -34,6 +34,15 @@
   z-index: 4;
 }
 
+.addTask {
+  background: #f2a969;
+  border-radius: 50px;
+  color: white;
+  font-size: 30px;
+  padding: 5px 20px;
+  margin: 10px;
+}
+
 @keyframes modalOpen {
   from {
     display: none;
