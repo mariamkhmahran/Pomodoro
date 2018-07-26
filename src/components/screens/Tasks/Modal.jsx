@@ -1,51 +1,63 @@
 import React from "react";
 
+import "./Modal.css";
+
 export default class Modal extends React.Component {
-  showModal = () => {
-    if (!this.props.open) {
-      return;
-    }
-    var modal = document.getElementById("modal");
-    modal.style.display = "block";
-
-    var span = document.getElementsByClassName("close")[0];
-    let self = this;
-    span.onclick = function() {
-      self.clearFields();
-      modal.style.display = "none";
-    };
-
-    window.onclick = function(event) {
-      if (event.target === modal) {
-        modal.style.display = "none";
-      }
-    };
+  onClose = () => {
+    this.clearFields();
+    this.props.onClose();
   };
 
   clearFields() {
-    console.log("clearing..");
     document.getElementById("name").value = "";
     document.getElementById("cycles").value = "";
     document.getElementById("deadline").value = null;
   }
 
-  addTask() {
-    let name = document.getElementById("name").value,
-      cycles = document.getElementById("cycles").value,
-      deadline = document.getElementById("deadline").value;
+  addTask = () => {
+    if (
+      document.querySelector("#name").value === "" ||
+      document.querySelector("#cycles").value === "" ||
+      document.querySelector("#deadline").value === null
+    ) {
+      this.showSnackbar();
+      return;
+    }
+
+    let name = document.querySelector("#name").value,
+      cycles = document.querySelector("#cycles").value,
+      deadline = document.querySelector("#deadline").value;
 
     this.props.addTask({ name, cycles, deadline });
-    this.clearFields();
+    this.onClose();
+  };
+
+  showSnackbar() {
+    var x = document.getElementById("snackbar");
+    x.className = "show";
+    setTimeout(function() {
+      x.className = x.className.replace("show", "");
+    }, 3000);
   }
 
   render() {
-    this.showModal();
+    const { isOpen } = this.props;
+    const { addTask, onClose } = this;
     return (
-      <div id="modal" className="modal">
-        <div className="modal-content">
-          <span className="close">&times;</span>
+      <div className="modal" data-is-open={isOpen}>
+        <div className="modal__screen" onClick={onClose} />
+        <div id="snackbar">Please fill all information..</div>
+        <div className="modal__content">
+          <span onClick={onClose} className="modal__close">
+            &times;
+          </span>
           <span className="subtitle orange">ADD NEW TASK</span>
-          <input className="inputField" type="text" id="name" placeholder="Name" />
+          <input
+            className="inputField"
+            type="text"
+            id="name"
+            placeholder="Name"
+          />
           <input
             className="inputField"
             type="text"
@@ -59,7 +71,7 @@ export default class Modal extends React.Component {
             placeholder="Deadline"
           />
           <div>
-            <button className="btn addTask" onClick={() => this.addTask()}>
+            <button className="btn addTask" onClick={addTask}>
               Add Task
             </button>
           </div>
