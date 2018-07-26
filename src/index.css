@@ -222,6 +222,12 @@ body {
     margin-top: 5%;
   }
 
+  .subHeader {
+    padding: 40px 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+
   .Title {
     font-size: 30px;
     margin: 20px 0px;
@@ -230,6 +236,12 @@ body {
 
   .subtitle {
     font-size: 50px;
+  }
+
+  .charts > div:first-child {
+    padding: 0px 6px;
+    width: 100%;
+    height: 90%;
   }
 }
 

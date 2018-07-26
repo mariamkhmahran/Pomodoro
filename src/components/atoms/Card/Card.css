@@ -22,6 +22,10 @@
   margin: 7px;
 }
 
+.card:hover {
+  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.4);
+}
+
 .cardContainer {
   width: 100%;
   display: flex;
@@ -57,9 +61,6 @@
 .q_card {
   height: 80px;
   width: 85%;
-}
-.card:hover {
-  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.4);
 }
 .slider {
   width: 12%;
@@ -174,4 +175,33 @@
 
 .subCard .check {
   margin: 20px;
+}
+
+@media screen and (max-width: 800px) {
+  .task_card {
+    text-align: left;
+    height: 150px;
+    width: 100%;
+  }
+  .q_card {
+    width: 99%;
+  }
+  .big {
+    width: 35px;
+    height: 35px;
+    margin: 20px 10px;
+    padding: 0px 15px;
+  }
+  .content p {
+    width: 50%;
+    font-size: 25px;
+    text-overflow: ellipsis;
+  }
+  #cyclesDone {
+    width: 20%;
+    font-size: 15px;
+  }
+  .slider {
+    width: 20%;
+  }
 }

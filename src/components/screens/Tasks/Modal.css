@@ -80,7 +80,8 @@
   border-radius: 10px; /* Rounded borders */
   padding: 16px; /* Padding */
   position: fixed; /* Sit on top of the screen */
-  z-index: 4; /* Add a z-index if needed */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  z-index: 5; /* Add a z-index if needed */
   left: 50%; /* Center the snackbar */
   top: 50px; /* 30px from the bottom */
 }
@@ -137,5 +138,13 @@ However, delay the fade out process for 2.5 seconds */
   to {
     top: 0;
     opacity: 0;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .modal__content {
+    padding: 20px;
+    width: 99%;
+    height: 80%;
   }
 }
