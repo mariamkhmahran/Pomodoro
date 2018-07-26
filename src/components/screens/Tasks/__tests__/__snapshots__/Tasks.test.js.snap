@@ -1,0 +1,290 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render 1`] = `
+<div
+  className="router_output"
+>
+  <div
+    className="modal"
+    data-is-open={false}
+  >
+    <div
+      className="modal__screen"
+      onClick={[Function]}
+    />
+    <div
+      id="snackbar"
+    >
+      Please fill all information..
+    </div>
+    <div
+      className="modal__content"
+    >
+      <span
+        className="modal__close"
+        onClick={[Function]}
+      >
+        ×
+      </span>
+      <span
+        className="subtitle orange"
+      >
+        ADD NEW TASK
+      </span>
+      <input
+        className="inputField"
+        id="name"
+        placeholder="Name"
+        type="text"
+      />
+      <input
+        className="inputField"
+        id="cycles"
+        placeholder="Estimated total number of cycles"
+        type="text"
+      />
+      <input
+        className="inputField"
+        id="deadline"
+        placeholder="Deadline"
+        type="date"
+      />
+      <div>
+        <button
+          className="btn addTask"
+          onClick={[Function]}
+        >
+          Add Task
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    className="subHeader"
+  >
+    <span
+      className="subtitle"
+    >
+      TASKS
+    </span>
+    <button
+      className="btn plusBtn"
+      onClick={[Function]}
+    >
+      <i
+        className="fa fa-plus"
+      />
+    </button>
+  </div>
+  <div
+    className="Main tasks"
+  >
+    <div>
+      <div
+        className="col"
+      >
+        <div
+          className="transparent_box"
+        >
+          <span
+            className="subtitle"
+          >
+            TO DO
+          </span>
+          <div
+            className="cardList"
+          >
+            <div
+              className="maxWidth centerAlign column"
+            >
+              <div
+                className="task_card card"
+              >
+                <div
+                  className="content task_content"
+                >
+                  <div>
+                    <button
+                      className="check small "
+                      onClick={[Function]}
+                    />
+                    <div
+                      className="task_data"
+                    >
+                      <b
+                        id="name"
+                      >
+                        Pomodoro App
+                      </b>
+                      <span>
+                        - Cycles done: 
+                        5
+                      </span>
+                      <span>
+                        - Estimated total number of cycles: 
+                        20
+                      </span>
+                      <span>
+                        - Deadline: 
+                        1/7/2018
+                      </span>
+                    </div>
+                    <div
+                      className="actions"
+                    >
+                      <span
+                        className="card__close"
+                        onClick={[Function]}
+                      >
+                        ×
+                      </span>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="expansionPanel maxWidth"
+                id="panel"
+              >
+                
+              </div>
+            </div>
+            <div
+              className="maxWidth centerAlign column"
+            >
+              <div
+                className="task_card card"
+              >
+                <div
+                  className="content task_content"
+                >
+                  <div>
+                    <button
+                      className="check small "
+                      onClick={[Function]}
+                    />
+                    <div
+                      className="task_data"
+                    >
+                      <b
+                        id="name"
+                      >
+                        Change the world
+                      </b>
+                      <span>
+                        - Cycles done: 
+                        9
+                      </span>
+                      <span>
+                        - Estimated total number of cycles: 
+                        240
+                      </span>
+                      <span>
+                        - Deadline: 
+                        1/7/2020
+                      </span>
+                    </div>
+                    <div
+                      className="actions"
+                    >
+                      <span
+                        className="card__close"
+                        onClick={[Function]}
+                      >
+                        ×
+                      </span>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="expansionPanel maxWidth"
+                id="panel"
+              >
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="col"
+      >
+        <div
+          className="transparent_box"
+        >
+          <span
+            className="subtitle"
+          >
+            DONE
+          </span>
+          <div
+            className="cardList"
+          >
+            <div
+              className="maxWidth centerAlign column"
+            >
+              <div
+                className="task_card card"
+              >
+                <div
+                  className="content task_content"
+                >
+                  <div>
+                    <img
+                      alt="checkbox"
+                      className="small"
+                      id="doneImg"
+                      src="checked.svg"
+                    />
+                    <div
+                      className="task_data"
+                    >
+                      <b
+                        id="name"
+                      >
+                        Do Something
+                      </b>
+                      <span>
+                        - Cycles done: 
+                        12
+                      </span>
+                      <span>
+                        - Estimated total number of cycles: 
+                        10
+                      </span>
+                      <span>
+                        - Deadline: 
+                        1/1/2018
+                      </span>
+                    </div>
+                    <div
+                      className="actions"
+                    >
+                      <span
+                        className="card__close"
+                        onClick={[Function]}
+                      >
+                        ×
+                      </span>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="expansionPanel maxWidth"
+                id="panel"
+              >
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
