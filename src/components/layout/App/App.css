@@ -30,3 +30,16 @@
   justify-content: space-between;
   padding: 10px;
 }
+
+#timer_icon {
+  height: 60px;
+  width: 60px;
+}
+
+#header_icon {
+  width: 30px;
+  height: 30px;
+}
+.icon {
+  margin: 10px;
+}
