@@ -6,24 +6,7 @@
       "cyclesDone": 5,
       "estimatedTime": 20,
       "deadline": "1/7/2018",
-      "subTasks": [
-        {
-          "id": "_kkvvaj596",
-          "name": "design",
-          "cyclesDone": 2,
-          "estimatedTime": 9,
-          "deadline": "15/6/2020",
-          "done": false
-        },
-        {
-          "id": "_kkvvaa796",
-          "name": "implement",
-          "cyclesDone": 1,
-          "estimatedTime": 11,
-          "deadline": "1/7/2020",
-          "done": false
-        }
-      ],
+      "subTasks": [],
       "done": false
     },
     {
@@ -38,7 +21,7 @@
     {
       "id": "_gcrrqkb4e",
       "name": "Eat healthy",
-      "cyclesDone": 0,
+      "cyclesDone": 1,
       "estimatedTime": 2,
       "deadline": "28/7/2018",
       "subTasks": [],
