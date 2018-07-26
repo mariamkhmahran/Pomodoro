@@ -17,3 +17,16 @@
 .App.ON .Header {
   box-shadow: 1px 0px 25px #ca5b5b;
 }
+
+.Header {
+  transition: 0.3s;
+  width: 100wh;
+  height: 50px;
+  box-shadow: 1px 0px 25px #ce8f58;
+  top: 0px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
