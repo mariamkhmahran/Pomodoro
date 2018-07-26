@@ -1,3 +1,11 @@
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90%;
+  width: 50%;
+}
+
 .tasks > div:first-child {
   display: flex;
   flex-wrap: wrap;
@@ -31,4 +39,17 @@
 .plusBtn:hover {
   background-color: rgb(249, 249, 249);
   box-shadow: 1px 0px 15px #ce8f58;
+}
+
+@media screen and (max-width: 800px) {
+  .col {
+    height: 90vh;
+    width: 100%;
+  }
+  .tasks .transparent_box {
+    height: 80vh;
+  }
+  .tasks > div:first-child {
+    padding: 0px 6px;
+  }
 }

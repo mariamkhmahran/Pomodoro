@@ -19,7 +19,8 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .btn {
@@ -87,14 +88,6 @@ body {
   flex-flow: row wrap;
   justify-content: center;
   align-items: flex-start;
-}
-
-.col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 90%;
-  width: 50%;
 }
 
 #clock {
@@ -228,6 +221,13 @@ body {
     border-top: 2px solid rgb(255, 255, 255, 0.5);
     margin-top: 5%;
   }
+
+  .Title {
+    font-size: 30px;
+    margin: 20px 0px;
+    -webkit-text-stroke: 1px white;
+  }
+
   .subtitle {
     font-size: 50px;
   }
@@ -244,5 +244,11 @@ body {
   .circular_btn#play {
     width: 120px;
     padding-left: 8px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #clock {
+    font-size: 100px;
   }
 }
