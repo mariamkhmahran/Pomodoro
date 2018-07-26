@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Focus from "src/components/screens/Focus";
 import Tasks from "src/components/screens/Tasks";
@@ -11,7 +11,7 @@ import TasksContext, { ContextTasks } from "src/logic/TasksContext";
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <TasksContext>
           <ContextTasks.Consumer>
             {({ addCycle }) => (
@@ -32,7 +32,7 @@ class App extends Component {
             )}
           </ContextTasks.Consumer>
         </TasksContext>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
