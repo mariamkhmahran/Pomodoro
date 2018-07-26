@@ -4,8 +4,9 @@ import * as GeneralState from "src/logic/GeneralState";
 export const ContextTasks = React.createContext();
 
 class TasksContext extends React.Component {
-  componentDidMount() {
-    this.update();
+  async componentDidMount() {
+    await this.update();
+    this.props.onDidMount && this.props.onDidMount(this);
   }
 
   update = async () => {
@@ -19,22 +20,20 @@ class TasksContext extends React.Component {
     let id = "_" + Math.random().toString(36);
     let task = {
       id: id.substr(2, 9),
-      name: name,
+      name,
       cyclesDone: 0,
       estimatedTime: cycles,
-      deadline: deadline,
+      deadline,
       subTasks: [],
       done: false
     };
 
-    let promise = GeneralState.set("tasks", [task, ...this.state.tasks]);
-    GeneralState.set("queue", [...this.state.queue, task]);
+    await Promise.all([
+      GeneralState.addAtBeginning("tasks", task),
+      GeneralState.addAtEnd("queue", task)
+    ]);
 
-    Promise.all([promise]).then(() => {
-      this.update();
-      var modal = document.getElementById("modal");
-      modal.style.display = "none";
-    });
+    await this.update();
   };
 
   addCycle = async () => {
@@ -47,27 +46,40 @@ class TasksContext extends React.Component {
     ];
 
     await Promise.all(Promises);
-    this.update();
+    await this.update();
   };
 
   markAsDone = async task => {
     task.done = true;
-    task.subTasks.forEach(task => {
-      task.done = true;
-    });
+    task.subTasks &&
+      task.subTasks.forEach(task => {
+        task.done = true;
+      });
 
     let Promises = [
       GeneralState.removeItem("tasks", t => t.id === task.id),
       GeneralState.removeItem("queue", t => t.id === task.id),
-      GeneralState.addAtBeginning("done", task)
+      GeneralState.addAtBeginning("done", task),
+      GeneralState.logTask()
     ];
 
     await Promise.all(Promises);
-    this.update();
+    await this.update();
+  };
+
+  deleteTask = async task => {
+    let Promises = [
+      await GeneralState.removeItem("tasks", t => t.id === task.id),
+      await GeneralState.removeItem("done", t => t.id === task.id),
+      await GeneralState.removeItem("queue", t => t.id === task.id)
+    ];
+    await Promise.all(Promises);
+    await this.update();
   };
 
   reOrder = async (...args) => {
     this.setState({ queue: await GeneralState.reOrder(...args) });
+    await GeneralState.set("queue", this.state.queue);
   };
 
   state = {
@@ -77,6 +89,7 @@ class TasksContext extends React.Component {
     addTask: this.addTask,
     addCycle: this.addCycle,
     markAsDone: this.markAsDone,
+    deleteTask: this.deleteTask,
     reOrder: this.reOrder
   };
 
