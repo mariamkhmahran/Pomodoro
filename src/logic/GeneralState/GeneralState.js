@@ -89,6 +89,7 @@ async function log() {
     }
     return await set("chartData", data);
   }
+  return data;
 }
 
 async function logTask() {

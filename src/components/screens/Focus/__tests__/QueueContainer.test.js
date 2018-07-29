@@ -5,7 +5,7 @@ import * as GeneralState from "src/logic/GeneralState";
 import TasksContext from "src/logic/TasksContext";
 import TasksData from "src/mocks/TasksData.json";
 
-test("renders correctly", async () => {
+xtest("renders correctly", async () => {
   let wrapper;
   await GeneralState.set("queue", TasksData.data);
   await new Promise((resolve, reject) => {
