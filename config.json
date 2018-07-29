@@ -1,0 +1,7 @@
+{
+  "testMatch": ["src/**/__tests__/**.js"],
+  "setupFiles": ["src/**/__tests__/**.js"],
+  "transform": { ".*": "/node_modules/babel-jest" },
+  "moduleFileExtensions": ["js"],
+  "collectCoverageFrom": ["src/*.js", "!src/index.js"]
+}
