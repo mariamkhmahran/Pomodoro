@@ -1,5 +1,8 @@
 {
-  "testMatch": ["src/**/__tests__/**.js"],
+  "testMatch": [
+    "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
+    "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,mjs}"
+  ],
   "setupFiles": ["src/**/__tests__/**.js"],
   "transform": { ".*": "/node_modules/babel-jest" },
   "moduleFileExtensions": ["js"],
