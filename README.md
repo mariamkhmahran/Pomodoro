@@ -1,4 +1,4 @@
-![StatementCoverage Status](./coverage/badge-statements.svg)
+![Statement Coverage Status](./coverage/badge-statements.svg)
 ![Coverage Status](./coverage/badge-functions.svg)
 ![Coverage Status](./coverage/badge-lines.svg)
 ![Coverage Status](./coverage/badge-branches.svg)
