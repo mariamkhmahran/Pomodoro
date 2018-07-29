@@ -1,7 +1,7 @@
 import React from "react";
 import TasksContext from "./TasksContext";
 import TasksData from "src/mocks/TasksData";
-import ChartData from "/home/mariam/pomodoro/src/mocks/ChartData.json";
+import ChartData from "src/mocks/ChartData.json";
 import { shallow } from "enzyme";
 import * as GeneralState from "src/logic/GeneralState";
 
