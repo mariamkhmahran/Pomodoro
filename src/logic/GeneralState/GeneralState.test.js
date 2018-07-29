@@ -97,6 +97,11 @@ test("GeneralState.log", async () => {
   expect(data.tasks[2]).toHaveProperty("value", 0);
   expect(data.tasks[0]).toHaveProperty("value", 0);
   expect(data.tasks[7]).toHaveProperty("day", day);
+
+  data = await GeneralState.log(2);
+  expect(data.tasks.length).toEqual(8);
+  expect(data.tasks[7]).toHaveProperty("value", 0);
+  expect(data.tasks[2]).toHaveProperty("value", 0);
 });
 
 describe("chart data", () => {

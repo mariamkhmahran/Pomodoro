@@ -70,14 +70,14 @@ async function reOrder(queue, startIndex, endIndex) {
   return null;
 }
 
-async function log() {
+async function log(d) {
   let data = await get("chartData");
   if (data && data.length <= 0) {
     await set("chartData", chartData);
     data = chartData;
   }
   let tasks = data.tasks;
-  let day = new Date().getDay();
+  let day = d ? d : new Date().getDay();
   if (tasks[7].day !== day) {
     let diff = tasks[7].day;
     while (diff++ % 7 !== day) {
