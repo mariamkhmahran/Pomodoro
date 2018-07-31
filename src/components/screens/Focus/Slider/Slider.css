@@ -56,14 +56,13 @@
   position: absolute;
   width: 0;
   height: 0;
-  border-color: #857261 #857261 #857261 #857261;
 }
 /**
 * Rangeslider - Horizontal slider
 */
 .rangeslider-horizontal {
   height: 5px;
-  width: 60%;
+  width: 65%;
   border-radius: 10px;
 }
 .rangeslider-horizontal .rangeslider__fill {
