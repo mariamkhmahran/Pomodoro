@@ -50,11 +50,19 @@ class TimerContext extends React.Component {
     });
   };
 
+  setRemainingTime = value => {
+    this.setState(() => ({
+      remainigTime: value
+    }));
+    this.time = value;
+  };
+
   state = {
     remainigTime: POMODORO_TIME,
     startTimer: this.startTimer,
     stopTimer: this.stopTimer,
-    isTimerRunning: false
+    isTimerRunning: false,
+    setRemainingTime: this.setRemainingTime
   };
 
   render() {
