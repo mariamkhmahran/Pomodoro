@@ -51,10 +51,11 @@ class TimerContext extends React.Component {
   };
 
   setRemainingTime = value => {
+    var change = (this.state.remainigTime + value) % (60 * 60 * 1000);
     this.setState(() => ({
-      remainigTime: value
+      remainigTime: change
     }));
-    this.time = value;
+    this.time = change;
   };
 
   state = {

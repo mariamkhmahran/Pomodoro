@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { HashRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Focus from "src/components/screens/Focus";
+import Clk from "src/components/screens/Focus/ClockSlider";
 import Tasks from "src/components/screens/Tasks";
 import Charts from "src/components/screens/Charts/Charts";
 import Header from "src/components/layout/Header";
@@ -24,6 +25,7 @@ class App extends Component {
                         <Route exact path="/" component={Focus} />
                         <Route exact path="/tasks" component={Tasks} />
                         <Route exact path="/charts" component={Charts} />
+                        <Route exact path="/clk" component={Clk} />
                       </Switch>
                     </div>
                   )}

@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  font-family: "ABeeZee", sans-serif;
+  font-family: 'ABeeZee', sans-serif;
   text-align: center;
   transition: 0.3s;
 }
@@ -102,9 +102,10 @@ body {
   width: 194px;
   border: 7px solid black;
   border-radius: 50%;
+  user-select: none;
 }
 .circular_btn#play {
-  width: 170px;
+  width: 195px;
   padding-left: 24px;
   border-color: white;
 }

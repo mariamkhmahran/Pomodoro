@@ -71,3 +71,122 @@ import * as GeneralState from "src/logic/GeneralState"
           "deadline": "1/7/2020",
           "done": false
         }
+
+
+
+
+
+
+///////////////////////////////////
+import React from "react";
+import "./ClockSlider.css";
+
+const CELL_COUNT = 9;
+const CELLS = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+export default class ClockSlider extends React.Component {
+  componentDidMount() {
+    this.tick = document.querySelector(".tick");
+    this.cells = this.tick.querySelectorAll(".tick__cell");
+    this.selectedIndex = 0;
+    this.cellWidth = this.tick.offsetWidth;
+    this.cellHeight = this.tick.offsetHeight;
+    this.radius = Math.round(
+      this.cellWidth / 2 / Math.tan(Math.PI / CELL_COUNT)
+    );
+    this.theta = 360 / CELL_COUNT;
+    this.prevButton = document.querySelector(".previous-button");
+    this.prevButton.addEventListener("click", () => {
+      this.selectedIndex--;
+      this.rotatetick();
+    });
+    this.nextButton = document.querySelector(".next-button");
+    this.nextButton.addEventListener("click", () => {
+      this.selectedIndex++;
+      this.rotatetick();
+    });
+  }
+
+  rotatetick = () => {
+    var angle = this.theta * this.selectedIndex * -1;
+    this.tick.style.transform =
+      "translateZ(" + -this.radius + "px) rotateY(" + angle + "deg)";
+  };
+
+  startX = 0;
+  startY = 0;
+  currX = 0;
+  currY = 0;
+
+  dragStart = event => {
+    console.log(event);
+    if (event.type === "dragstart") {
+      event.dataTransfer.setData("Text", event.target.id);
+    }
+    this.startX = event.pageX;
+    this.startY = event.pageY;
+    // console.log(this.startX + " " + this.startY);
+  };
+
+  dragging = event => {
+    this.currX = event.pageX;
+    this.currY = event.pageY;
+    var distance = this.currX - this.startX;
+  };
+
+  allowDrop = event => {
+    event.preventDefault();
+    // console.log(this.currX + " " + this.currY);
+  };
+
+  drop = event => {
+    event.preventDefault();
+    console.log("...");
+    console.log(this.currX + " " + this.currY);
+  };
+  render() {
+    return (
+      <div className="router_output">
+        <div className="scene">
+          <div className="tick">
+            {CELLS.map(n => (
+              <div key={n} className="tick__cell">
+                {n}
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="tick-options">
+          <p>
+            <button className="previous-button">Previous</button>
+            <button className="next-button">Next</button>
+          </p>
+        </div>
+
+        <div
+          style={{ height: "300px" }}
+          className="droptarget"
+          onDrop={this.drop}
+          onDragOver={this.allowDrop}>
+          <p
+            onMouseDown={this.dragStart}
+            onMouseUp={() => console.log("kj")}
+            onDragStart={this.dragStart}
+            onDrag={this.dragging}
+            draggable="true"
+            id="dragtarget">
+            Drag me!
+          </p>
+        </div>
+
+        <div
+          style={{ height: "300px" }}
+          className="droptarget"
+          onDrop={this.drop}
+          onDragOver={this.allowDrop}
+        />
+        <p id="demo" />
+      </div>
+    );
+  }
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import moment from "moment";
 import { Context } from "src/logic/TimerContext";
-import Slider from "./Slider/Slider";
+import ClockTicks from "src/components/screens/Focus/ClockSlider/ClockTicks";
 import play_btn from "src/pics/play_btn.png";
 import pause_btn from "src/pics/pause_btn.png";
 
@@ -21,13 +21,10 @@ const Clock = () => (
             flexDirection: "column",
             alignItems: "center"
           }}>
-          <h1 style={{ marginBottom: "20px" }} id="clock">
+          <h1 style={{ marginBottom: "0px" }} id="clock">
             {moment(remainigTime).format("mm:ss")}
           </h1>
-          <Slider
-            remainingTime={remainigTime}
-            setRemainingTime={setRemainingTime}
-          />
+          <ClockTicks value={remainigTime} onChange={setRemainingTime} />
           <button
             className="no-btn-styles round"
             onClick={() => (isTimerRunning ? stopTimer() : startTimer())}>
