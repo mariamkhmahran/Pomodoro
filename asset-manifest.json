@@ -1,10 +1,24 @@
 {
-  "main.css": "static/css/main.4ba14c18.css",
-  "main.css.map": "static/css/main.4ba14c18.css.map",
-  "main.js": "static/js/main.31986c7b.js",
-  "main.js.map": "static/js/main.31986c7b.js.map",
-  "static/media/Polygon.svg": "static/media/Polygon.691e6844.svg",
-  "static/media/charts_icon.svg": "static/media/charts_icon.8b9b4ee1.svg",
-  "static/media/checked.svg": "static/media/checked.4c53f97b.svg",
-  "static/media/tasks_icon.svg": "static/media/tasks_icon.56f29f60.svg"
+  "files": {
+    "main.css": "/Pomodoro/static/css/main.e08d7f0a.chunk.css",
+    "main.js": "/Pomodoro/static/js/main.0b286a94.chunk.js",
+    "main.js.map": "/Pomodoro/static/js/main.0b286a94.chunk.js.map",
+    "runtime-main.js": "/Pomodoro/static/js/runtime-main.9ea537e0.js",
+    "runtime-main.js.map": "/Pomodoro/static/js/runtime-main.9ea537e0.js.map",
+    "static/js/2.06ae9892.chunk.js": "/Pomodoro/static/js/2.06ae9892.chunk.js",
+    "static/js/2.06ae9892.chunk.js.map": "/Pomodoro/static/js/2.06ae9892.chunk.js.map",
+    "index.html": "/Pomodoro/index.html",
+    "static/css/main.e08d7f0a.chunk.css.map": "/Pomodoro/static/css/main.e08d7f0a.chunk.css.map",
+    "static/js/2.06ae9892.chunk.js.LICENSE.txt": "/Pomodoro/static/js/2.06ae9892.chunk.js.LICENSE.txt",
+    "static/media/Polygon.b3c5f0a2.svg": "/Pomodoro/static/media/Polygon.b3c5f0a2.svg",
+    "static/media/charts_icon.25bd1e6e.svg": "/Pomodoro/static/media/charts_icon.25bd1e6e.svg",
+    "static/media/checked.60a5d110.svg": "/Pomodoro/static/media/checked.60a5d110.svg",
+    "static/media/tasks_icon.34995003.svg": "/Pomodoro/static/media/tasks_icon.34995003.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9ea537e0.js",
+    "static/js/2.06ae9892.chunk.js",
+    "static/css/main.e08d7f0a.chunk.css",
+    "static/js/main.0b286a94.chunk.js"
+  ]
 }
