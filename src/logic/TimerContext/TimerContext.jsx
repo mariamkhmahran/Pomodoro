@@ -1,5 +1,5 @@
 import React from "react";
-import * as GeneralState from "src/logic/GeneralState";
+import * as GeneralState from "../GeneralState";
 
 const POMODORO_TIME = 25 * 60 * 1000;
 export const Context = React.createContext();
@@ -13,7 +13,7 @@ class TimerContext extends React.Component {
       let currentTime = new Date();
       if (remainigTime >= 0) {
         this.setState({
-          remainigTime: this.time - (currentTime - this.startTime)
+          remainigTime: this.time - (currentTime - this.startTime),
         });
         window.requestAnimationFrame(this.tick);
       } else {
@@ -25,7 +25,7 @@ class TimerContext extends React.Component {
   completeCycle = () => {
     this.setState(() => ({
       remainigTime: POMODORO_TIME,
-      isTimerRunning: false
+      isTimerRunning: false,
     }));
     this.props.addCycle();
     GeneralState.logCycle();
@@ -34,7 +34,7 @@ class TimerContext extends React.Component {
   startTimer = () => {
     this.setState(
       () => ({
-        isTimerRunning: true
+        isTimerRunning: true,
       }),
       () => {
         this.startTime = Date.now();
@@ -46,14 +46,14 @@ class TimerContext extends React.Component {
   stopTimer = () => {
     this.time = this.state.remainigTime;
     this.setState({
-      isTimerRunning: false
+      isTimerRunning: false,
     });
   };
 
-  setRemainingTime = value => {
-    var change = (this.state.remainigTime + value) % (60 * 60 * 1000);
+  setRemainingTime = (value) => {
+    var change = value % (60 * 60 * 1000);
     this.setState(() => ({
-      remainigTime: change
+      remainigTime: change,
     }));
     this.time = change;
   };
@@ -63,7 +63,7 @@ class TimerContext extends React.Component {
     startTimer: this.startTimer,
     stopTimer: this.stopTimer,
     isTimerRunning: false,
-    setRemainingTime: this.setRemainingTime
+    setRemainingTime: this.setRemainingTime,
   };
 
   render() {

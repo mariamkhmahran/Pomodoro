@@ -1,7 +1,7 @@
 import React from "react";
-import timer_icon from "src/pics/timer_icon.png";
-import tasks_icon from "src/pics/tasks_icon.svg";
-import charts_icon from "src/pics/charts_icon.svg";
+import timer_icon from "../../pics/timer_icon.png";
+import tasks_icon from "../../pics/tasks_icon.svg";
+import charts_icon from "../../pics/charts_icon.svg";
 import { Link } from "react-router-dom";
 
 const Header = () => (

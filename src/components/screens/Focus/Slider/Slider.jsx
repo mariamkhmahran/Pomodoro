@@ -6,11 +6,11 @@ export default class ClockSlider extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      volume: 0
+      volume: 0,
     };
   }
 
-  handleOnChange = value => {
+  handleOnChange = (value) => {
     this.props.setRemainingTime(value * 60 * 1000);
   };
 

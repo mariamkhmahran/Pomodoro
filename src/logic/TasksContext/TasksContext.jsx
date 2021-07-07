@@ -1,5 +1,5 @@
 import React from "react";
-import * as GeneralState from "src/logic/GeneralState";
+import * as GeneralState from "../GeneralState";
 
 export const ContextTasks = React.createContext();
 
@@ -12,7 +12,7 @@ class TasksContext extends React.Component {
   update = async () => {
     let state = await GeneralState.getAll();
     this.setState(() => ({
-      ...state
+      ...state,
     }));
   };
 
@@ -25,12 +25,12 @@ class TasksContext extends React.Component {
       estimatedTime: cycles,
       deadline,
       subTasks: [],
-      done: false
+      done: false,
     };
 
     await Promise.all([
       GeneralState.addAtBeginning("tasks", task),
-      GeneralState.addAtEnd("queue", task)
+      GeneralState.addAtEnd("queue", task),
     ]);
 
     await this.update();
@@ -39,39 +39,39 @@ class TasksContext extends React.Component {
   addCycle = async () => {
     let task = this.state.queue.slice(0, 1)[0];
 
-    task.cyclesDone += 1;
+    !!task && (task.cyclesDone += 1);
     let Promises = [
-      GeneralState.updateItem("tasks", task, t => t.id === task.id),
-      GeneralState.updateItem("queue", task, t => t.id === task.id)
+      GeneralState.updateItem("tasks", task, (t) => t.id === task.id),
+      GeneralState.updateItem("queue", task, (t) => t.id === task.id),
     ];
 
     await Promise.all(Promises);
     await this.update();
   };
 
-  markAsDone = async task => {
+  markAsDone = async (task) => {
     task.done = true;
     task.subTasks &&
-      task.subTasks.forEach(task => {
+      task.subTasks.forEach((task) => {
         task.done = true;
       });
 
     let Promises = [
-      GeneralState.removeItem("tasks", t => t.id === task.id),
-      GeneralState.removeItem("queue", t => t.id === task.id),
+      GeneralState.removeItem("tasks", (t) => t.id === task.id),
+      GeneralState.removeItem("queue", (t) => t.id === task.id),
       GeneralState.addAtBeginning("done", task),
-      GeneralState.logTask()
+      GeneralState.logTask(),
     ];
 
     await Promise.all(Promises);
     await this.update();
   };
 
-  deleteTask = async task => {
+  deleteTask = async (task) => {
     let Promises = [
-      await GeneralState.removeItem("tasks", t => t.id === task.id),
-      await GeneralState.removeItem("done", t => t.id === task.id),
-      await GeneralState.removeItem("queue", t => t.id === task.id)
+      await GeneralState.removeItem("tasks", (t) => t.id === task.id),
+      await GeneralState.removeItem("done", (t) => t.id === task.id),
+      await GeneralState.removeItem("queue", (t) => t.id === task.id),
     ];
     await Promise.all(Promises);
     await this.update();
@@ -90,7 +90,7 @@ class TasksContext extends React.Component {
     addCycle: this.addCycle,
     markAsDone: this.markAsDone,
     deleteTask: this.deleteTask,
-    reOrder: this.reOrder
+    reOrder: this.reOrder,
   };
 
   render() {

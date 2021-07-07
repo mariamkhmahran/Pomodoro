@@ -1,6 +1,6 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
-import * as GeneralState from "src/logic/GeneralState";
+import * as GeneralState from "../../../logic/GeneralState";
 
 var weekday = new Array(7);
 weekday[0] = "Sunday";

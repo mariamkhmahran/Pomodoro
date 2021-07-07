@@ -1,5 +1,5 @@
 import localforage from "localforage";
-import chartData from "src/mocks/ChartData.json";
+import chartData from "../../mocks/ChartData.json";
 
 async function set(attr, value, callback) {
   await localforage.setItem(attr, value, callback);
@@ -128,5 +128,5 @@ export {
   log,
   logTask,
   logCycle,
-  getChartData
+  getChartData,
 };

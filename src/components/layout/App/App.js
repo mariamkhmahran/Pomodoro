@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { HashRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
-import Focus from "src/components/screens/Focus";
-import Clk from "src/components/screens/Focus/ClockSlider";
-import Tasks from "src/components/screens/Tasks";
-import Charts from "src/components/screens/Charts/Charts";
-import Header from "src/components/layout/Header";
-import TimerContext, { Context } from "src/logic/TimerContext";
-import TasksContext, { ContextTasks } from "src/logic/TasksContext";
+import Focus from "../../screens/Focus";
+import Clk from "../../screens/Focus/Slider";
+import Tasks from "../../screens/Tasks";
+import Charts from "../../screens/Charts/Charts";
+import Header from "../Header";
+import TimerContext, { Context } from "../../../logic/TimerContext";
+import TasksContext, { ContextTasks } from "../../../logic/TasksContext";
 
 class App extends Component {
   render() {

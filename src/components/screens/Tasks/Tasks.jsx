@@ -1,7 +1,7 @@
 import React from "react";
 import Modal from "./Modal";
-import { TaskCard } from "src/components/atoms/Card";
-import { ContextTasks } from "src/logic/TasksContext";
+import { TaskCard } from "../../atoms/Card";
+import { ContextTasks } from "../../../logic/TasksContext";
 import "./Tasks.css";
 
 export default class Tasks extends React.Component {

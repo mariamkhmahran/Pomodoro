@@ -1,10 +1,10 @@
 import React from "react";
-import slider from "src/pics/slider.png";
-import checked from "src/pics/checked.svg";
-import arrow from "src/pics/Polygon.svg";
+import slider from "../../../pics/slider.png";
+import checked from "../../../pics/checked.svg";
+import arrow from "../../../pics/Polygon.svg";
 import "./Card.css";
 
-export const QueueCard = props => {
+export const QueueCard = (props) => {
   let { task, markAsDone } = props;
   let { name, cyclesDone } = task;
   return (
@@ -23,7 +23,7 @@ export const QueueCard = props => {
   );
 };
 
-const SubCard = props => (
+const SubCard = (props) => (
   <div className="card subCard content">
     <p>{props.task.name}</p>
     <span id="cyclesDone">
@@ -81,7 +81,8 @@ export class TaskCard extends React.Component {
                 {subTasks && subTasks.length > 0 ? (
                   <button
                     className="no-btn-styles expandBtn"
-                    onClick={this.expandPanel}>
+                    onClick={this.expandPanel}
+                  >
                     <img src={arrow} alt="expand" id="arrow" />
                   </button>
                 ) : (
@@ -93,7 +94,7 @@ export class TaskCard extends React.Component {
         </div>
         <div className="expansionPanel maxWidth" id="panel">
           {subTasks.length > 0
-            ? subTasks.map(task => <SubCard key={task.id} task={task} />)
+            ? subTasks.map((task) => <SubCard key={task.id} task={task} />)
             : ""}
         </div>
       </div>

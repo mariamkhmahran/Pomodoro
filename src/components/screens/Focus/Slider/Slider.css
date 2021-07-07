@@ -188,3 +188,8 @@
   top: 10px;
   transform: translate3d(-50%, 0, 0);
 }
+
+.myslider,
+.rangeslider {
+  width: 100%;
+}

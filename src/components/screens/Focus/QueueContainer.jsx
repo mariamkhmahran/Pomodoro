@@ -1,7 +1,7 @@
 import React from "react";
-import { QueueCard } from "src/components/atoms/Card";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-import { ContextTasks } from "src/logic/TasksContext";
+import { QueueCard } from "../../atoms/Card";
+import { ContextTasks } from "../../../logic/TasksContext";
 
 const QueueContainer = () => (
   <div className="right_col">
