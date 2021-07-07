@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { HashRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import Focus from "../../screens/Focus";
-import Clk from "../../screens/Focus/Slider";
+import Clk from "../../screens/Focus/ClockSlider";
 import Tasks from "../../screens/Tasks";
 import Charts from "../../screens/Charts/Charts";
 import Header from "../Header";
@@ -38,9 +38,5 @@ class App extends Component {
     );
   }
 }
-// class UpdateBlocker extends React.PureComponent {
-//   render() {
-//     return this.props.children;
-//   }
-// }
+
 export default App;

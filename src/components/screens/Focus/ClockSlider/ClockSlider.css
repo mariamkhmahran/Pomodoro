@@ -1,0 +1,47 @@
+.clockSlider {
+  width: 500px;
+  height: 100px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: center center 250px;
+}
+
+.circle {
+  transform-style: preserve-3d;
+  height: 80px;
+  width: 20px;
+  margin: auto;
+  position: relative;
+  cursor: e-resize;
+}
+
+.circle .tick {
+  position: absolute;
+  background-color: transparent;
+  transform-style: preserve-3d;
+  transform-origin: center;
+}
+
+.minute {
+  font-size: 14px;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: -240px;
+  content: "";
+  width: 500px;
+  height: 100px;
+  background-color: #f2a969;
+  z-index: 0;
+  transition: background-color 0.3s;
+}
+
+.ON .background {
+  background-color: #f37070;
+}
+
+.ON .circle {
+  cursor: default;
+}

@@ -5,16 +5,16 @@ import PropTypes from "prop-types";
 
 const ContextProxy = createContextProxy({
   childContextTypes: {
-    remainigTime: PropTypes.number.isRequired,
+    remainingTime: PropTypes.number.isRequired,
     startTimer: PropTypes.func.isRequired,
     stopTimer: PropTypes.func.isRequired,
     isTimerRunning: PropTypes.bool.isRequired,
-    endOfCycle: PropTypes.bool.isRequired
-  }
+    endOfCycle: PropTypes.bool.isRequired,
+  },
 });
 
 export default [
   ContextProxy,
-  createReactRouterProxy()
+  createReactRouterProxy(),
   // ...other proxies
 ];

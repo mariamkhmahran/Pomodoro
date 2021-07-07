@@ -35,7 +35,7 @@
 }
 
 .addTask {
-  background: #f2a969;
+  background: #f2a969 !important;
   border-radius: 50px;
   color: white;
   font-size: 30px;

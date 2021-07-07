@@ -192,12 +192,12 @@ class TimerContext extends React.Component {
   time = POMODORO_TIME;
 &nbsp;
   tick = () =&gt; {
-    const { isTimerRunning, remainigTime } = this.state;
+    const { isTimerRunning, remainingTime } = this.state;
     if (isTimerRunning) {
       let currentTime = new Date();
-      if (remainigTime &gt;= 0) {
+      if (remainingTime &gt;= 0) {
         this.setState({
-          remainigTime: this.time - (currentTime - this.startTime)
+          remainingTime: this.time - (currentTime - this.startTime)
         });
         window.requestAnimationFrame(this.tick);
       } else {
@@ -208,7 +208,7 @@ class TimerContext extends React.Component {
 &nbsp;
   completeCycle = () =&gt; {
     this.setState(() =&gt; ({
-      remainigTime: POMODORO_TIME,
+      remainingTime: POMODORO_TIME,
       isTimerRunning: false
     }));
     this.props.addCycle();
@@ -228,14 +228,14 @@ class TimerContext extends React.Component {
   };
 &nbsp;
   stopTimer = () =&gt; {
-    this.time = this.state.remainigTime;
+    this.time = this.state.remainingTime;
     this.setState({
       isTimerRunning: false
     });
   };
 &nbsp;
   state = {
-    remainigTime: POMODORO_TIME,
+    remainingTime: POMODORO_TIME,
     startTimer: this.startTimer,
     stopTimer: this.stopTimer,
     isTimerRunning: false

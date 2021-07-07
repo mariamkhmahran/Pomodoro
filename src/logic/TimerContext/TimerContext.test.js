@@ -10,7 +10,7 @@ test("compelteCycle ", () => {
   let instance = wrapper.instance();
   instance.completeCycle();
   expect(addCycle).toHaveBeenCalled();
-  expect(instance.state).toHaveProperty("remainigTime", POMODORO_TIME);
+  expect(instance.state).toHaveProperty("remainingTime", POMODORO_TIME);
   expect(instance.state).toHaveProperty("isTimerRunning", false);
 });
 test("startTimer", () => {
@@ -34,16 +34,16 @@ test("tick", async () => {
   let wrapper = shallow(<TimerContext addCycle={addCycle} />);
   let instance = wrapper.instance();
   instance.tick();
-  expect(instance.state.remainigTime).toEqual(POMODORO_TIME);
+  expect(instance.state.remainingTime).toEqual(POMODORO_TIME);
 
   instance.startTime = Date.now() - 1000;
   instance.setState({ isTimerRunning: true });
   instance.tick();
-  expect(instance.state.remainigTime).toBeLessThan(POMODORO_TIME);
+  expect(instance.state.remainingTime).toBeLessThan(POMODORO_TIME);
 
   let cycleComplete = jest.fn(instance.completeCycle);
   instance.completeCycle = cycleComplete;
-  instance.setState({ remainigTime: -1, isTimerRunning: true });
+  instance.setState({ remainingTime: -1, isTimerRunning: true });
   instance.tick();
 
   expect(cycleComplete).toHaveBeenCalled();
