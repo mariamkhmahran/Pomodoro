@@ -10,6 +10,7 @@ const TimerContext = (props) => {
   const [startTime, setStartTime] = useState();
   const [time, setTime] = useState(POMODORO_TIME);
   const isTimerRunning_ref = React.useRef(isTimerRunning);
+  const remainingTime_ref = React.useRef(remainingTime);
 
   useEffect(() => {
     if (!!isTimerRunning) setStartTime(Date.now());
@@ -22,12 +23,13 @@ const TimerContext = (props) => {
 
   useEffect(() => {
     setTime(remainingTime);
+    remainingTime_ref.current = remainingTime;
   }, [remainingTime]);
 
   const tick = () => {
     if (!!isTimerRunning_ref.current) {
       let currentTime = new Date();
-      if (remainingTime >= 0) {
+      if (remainingTime_ref.current >= 0) {
         setremainingTime(time - (currentTime - startTime));
         window.requestAnimationFrame(tick);
       } else {
